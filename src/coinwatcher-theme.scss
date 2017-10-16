@@ -1,0 +1,121 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+//http://mcg.mbitson.com/
+
+$mat-custom-accent: (
+    50 : #fbf3e7,
+    100 : #f4e2c3,
+    200 : #edcf9b,
+    300 : #e6bb72,
+    400 : #e0ad54,
+    500 : #db9e36,
+    600 : #d79630,
+    700 : #d28c29,
+    800 : #cd8222,
+    900 : #c47016,
+    A100 : #fffaf6,
+    A200 : #ffe0c3,
+    A400 : #ffc690,
+    A700 : #ffb976,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-custom-primary: (
+    50 : #eff4f5,
+    100 : #d6e4e7,
+    200 : #bbd2d7,
+    300 : #9fc0c7,
+    400 : #8bb3bb,
+    500 : #76a5af,
+    600 : #6e9da8,
+    700 : #63939f,
+    800 : #598a96,
+    900 : #467986,
+    A100 : #e0f9ff,
+    A200 : #adeeff,
+    A400 : #7ae3ff,
+    A700 : #61ddff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-custom-warn: (
+    50 : #f7e9e6,
+    100 : #ebc8c2,
+    200 : #dea499,
+    300 : #d18070,
+    400 : #c76451,
+    500 : #bd4932,
+    600 : #b7422d,
+    700 : #ae3926,
+    800 : #a6311f,
+    900 : #982113,
+    A100 : #ffcfcb,
+    A200 : #ffa198,
+    A400 : #ff7265,
+    A700 : #ff5b4c,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom-primary: mat-palette($mat-custom-primary);
+$custom-accent : mat-palette($mat-custom-accent);
+$custom-warn : mat-palette($mat-custom-warn);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+@include angular-material-theme($custom-theme);
+
+.dark-custom-theme {
+    $dark-custom-primary: mat-palette($mat-custom-primary);
+    $dark-custom-accent: mat-palette($mat-custom-accent);
+    $dark-custom-warn: mat-palette($mat-custom-warn);
+
+    $dark-custom-theme: mat-dark-theme($dark-custom-primary, $dark-custom-accent, $dark-custom-warn);
+
+    @include angular-material-theme($dark-custom-theme);
+}
