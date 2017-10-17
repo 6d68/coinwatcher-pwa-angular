@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -56,7 +56,7 @@ import { PouchDBService } from "./services/pouchdb.service";
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(public mdIconRegistry: MdIconRegistry) {
+  constructor(public mdIconRegistry: MatIconRegistry) {
     mdIconRegistry.registerFontClassAlias('coins','cc')
 
   }

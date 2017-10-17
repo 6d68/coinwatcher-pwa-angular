@@ -1,27 +1,27 @@
-<md-toolbar color="primary">
+<mat-toolbar color="primary">
   <span>Coin watcher</span>
   <span fxFlex></span>
-  <button md-icon-button (click)="refresh()">
-    <md-icon class="md-24" aria-label="refresh">refresh</md-icon>
+  <button mat-icon-button (click)="refresh()">
+    <mat-icon class="mat-24" aria-label="refresh">refresh</mat-icon>
   </button>
-  <button md-icon-button (click)="openCurrencyFinder()">
-    <md-icon class="md-24" aria-label="add">playlist_add</md-icon>
+  <button mat-icon-button (click)="openCurrencyFinder()">
+    <mat-icon class="mat-24" aria-label="add">playlist_add</mat-icon>
   </button>
-</md-toolbar>
+</mat-toolbar>
 
-<md-nav-list>
-  <md-list-item *ngFor="let currency of currencies">
-    <md-icon mdListIcon [ngClass]="'cc ' + currency.symbol +' md-24'" aria-label="currency.name" fontSet="cc"></md-icon>
-    <h3 mdLine> {{currency.symbol}} </h3>
-    <p mdLine>
+<mat-list>
+  <mat-list-item *ngFor="let currency of currencies">
+    <mat-icon matListIcon [ngClass]="'cc ' + currency.symbol +' mat-24'" aria-label="currency.name" fontSet="cc"></mat-icon>
+    <h3 matLine> {{currency.symbol}} </h3>
+    <p matLine>
       <span> {{currency.name}} </span>
       <span> -- {{currency.name}} </span>
     </p>
     <span></span>
     <span> {{(currency.price*1).toFixed(2)}}&nbsp;</span>
     <span> {{currency.price_currency}}</span>
-    <button md-icon-button (click)="deleteFromWatchList(currency)">
-      <md-icon class="md-24">delete</md-icon>
+    <button mat-icon-button (click)="deleteFromWatchList(currency)">
+      <mat-icon class="mat-24">delete</mat-icon>
     </button>
-  </md-list-item>
-</md-nav-list>
+  </mat-list-item>
+</mat-list>

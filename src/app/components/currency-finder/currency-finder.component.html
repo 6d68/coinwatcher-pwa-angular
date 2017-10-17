@@ -1,24 +1,24 @@
-<md-toolbar color="primary">
-  <button md-icon-button>
-    <md-icon class="md-24" aria-label="Back" (click)="goHome()">arrow_back</md-icon>
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon class="mat-24" aria-label="Back" (click)="goHome()">arrow_back</mat-icon>
   </button>
   <span fxFlex>Coin watcher</span>
-  <button md-icon-button *ngIf="currencyOptions.selectedOptions.selected.length > 0" (click)="addToWatchlist()">
-    <md-icon class="md-24" aria-label="Add to watchlist">add</md-icon>
+  <button mat-icon-button *ngIf="currencyOptions.selectedOptions.selected.length > 0" (click)="addToWatchlist()">
+    <mat-icon class="mat-24" aria-label="Add to watchlist">add</mat-icon>
   </button>
-</md-toolbar>
+</mat-toolbar>
 
 <div fxFlexLayout="column">
   <div class="search-bar">
-    <md-form-field fxFlex floatPlaceholder="never">
-      <input mdInput fxFlex [formControl]="term" type="search" id="keyword" placeholder="Find your favourite crypto currencies..."
+    <mat-form-field fxFlex floatPlaceholder="never">
+      <input matInput fxFlex [formControl]="term" type="search" id="keyword" placeholder="Find your favourite crypto currencies..."
         autofocus autocomplete="off">
-    </md-form-field>
+    </mat-form-field>
   </div>
 
-  <md-selection-list #currencyOptions>
-    <md-list-option *ngFor="let c of currencies" (click)="selectCurrency(c)">
+  <mat-selection-list #currencyOptions>
+    <mat-list-option *ngFor="let c of currencies" (click)="selectCurrency(c)">
       {{c.name}}
-    </md-list-option>
-  </md-selection-list>
+    </mat-list-option>
+  </mat-selection-list>
 </div>
